@@ -1,0 +1,104 @@
+@charset "ISO-8859-1";
+
+* {
+	font-family: 'Verdana', sans-serif;
+}
+
+h1 {
+	color: black;
+	text-align: center;
+}
+
+.p-formgroup-inline {
+	border-radius: 10px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+
+.dtNascimento {
+	font-size: 15px;
+}
+
+.inputText {
+	width: 100%; padding : 12px 12px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 12px 12px;
+}
+
+.botaoProximo {
+	width: 51%;
+	background-color: black;
+	color: white;
+	padding: 12px 12px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+.botaoVoltar {
+	width: 51%;
+	background-color: white;
+	color: black;
+	padding: 12px 12px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+.esqueceuSenha {
+	padding-bottom: 10px;
+}
+
+.login {
+	position: relative;
+}
+
+.loginConteudo {
+	width: 500px;
+	height: 350px;
+	display: block;
+	transform: translate(-50%, -60%);
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	position: absolute;
+	align-items: center;
+	text-align: center;
+	margin-top: 40vh;
+}
+
+
+.menu {
+	padding: 5px 8px;
+}
+
+.escolhaSexo {
+	display: absolute;
+	text-align: left;
+	align-items: left;
+	position: relative;
+	padding: 6px 12px;
+}
+
+.sexo {
+	font-size: 14px;
+}
+
+.body {
+	background-image: linear-gradient(45deg, yellow, #ff6601);
+}
+
+.driverLicExpCal {
+	width: 100%; padding : 12px 12px;
+	margin: 8px 0;
+	display: inline-block;
+	box-sizing: border-box;
+}

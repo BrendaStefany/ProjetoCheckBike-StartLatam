@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<h:outputStylesheet library="css" name="listagemBicicleta.css" />
+	<title>Bicicletas</title>
+</h:head>
+<h:body styleClass="body">
+
+
+	<p:growl id="msgGlobal" life="4000"></p:growl>
+
+
+	<h1>Lista de Bicicletas</h1>
+	<h:form id="formBicicletas">
+
+		<div class="card">
+			
+			<h:commandButton value="Excluir Bicileta" styleClass="botaoExcluir"
+				action="#{MBBicicleta.deletarBicicletaSelecionada}">
+
+			</h:commandButton>
+		
+			<p:commandButton value="Editar Bicileta" styleClass="botaoEditar"
+				actionListener="#{MBBicicleta.prepararPesquisaBicicleta}"
+				oncomplete="PF('dlgBikeEditar').show()"
+				update=":msgGlobal :formBikeEditar:pnlBikeEditar">
+
+			<f:setPropertyActionListener value="#{itemBicicleta}" target="#{MBBicicleta.bicicletaNova}" />
+			</p:commandButton>
+
+			<p:dataTable id="dataTable"
+				emptyMessage="Nenhum registro encontrado."
+				value="#{MBBicicleta.bicicletas}" var="itemBicicleta"
+				selectionMode="single"
+				selection="#{MBBicicleta.bicicletaSelecionada}"
+				rowKey="#{itemBicicleta.id_bicicleta}" paginator="true" rows="5"
+				widgetVar="tabela">
+
+				<p:column headerText="IdBicicleta"
+					filterBy="#{itemBicicleta.id_bicicleta}">
+					<h:outputText value="#{itemBicicleta.id_bicicleta}" />
+				</p:column>
+				<p:column headerText="Descrição"
+					filterBy="#{itemBicicleta.descricao}">
+					<h:outputText value="#{itemBicicleta.descricao}" />
+				</p:column>
+				<p:column headerText="Modelo" filterBy="#{itemBicicleta.modelo}">
+					<h:outputText value="#{itemBicicleta.modelo}" />
+				</p:column>
+
+
+			</p:dataTable>
+
+			<div class="insert">
+				<div class="CamposBicicleta">
+					<h2>Descrição</h2>
+					<p:inputText id="campoDescricao" styleClass="inputText"
+						value="#{MBBicicleta.bicicletaNova.descricao}">
+
+					</p:inputText>
+				</div>
+
+				<div class="CamposBicicleta">
+
+					<!-- <h:outputLabel value="Modelo" styleClass="fontLetra" /> -->
+					<h2>Modelo</h2>
+					<p:inputText id="campoModelo" styleClass="inputText"
+						value="#{MBBicicleta.bicicletaNova.modelo}" />
+				</div>
+				<div class="botao">
+					<h:commandButton value="Cadastrar Bicicleta"
+						styleClass="botaoCadastrar" action="#{MBBicicleta.novaBicicleta}"
+						update="msgGlobal">
+					</h:commandButton>
+
+				</div>
+
+			</div>
+		</div>
+
+
+
+	</h:form>
+
+
+
+	<p:dialog widgetVar="dlgBikeEditar" closable="false" draggable="false"
+		resizable="false" header="Bicicleta - Editar">
+		<h:form id="formBikeEditar">
+			<p:panelGrid id="pnlBikeEditar" columns="2">
+				<p:outputLabel value="Id:" />
+				<h:outputText value="#{MBBicicleta.bicicletaSelecionada.id_bicicleta}" />
+
+				<p:outputLabel value="Descrição:" />
+				<h:inputText value="#{MBBicicleta.bicicletaSelecionada.descricao}"
+					size="30" />
+
+				<p:outputLabel value="Modelo:" />
+				<h:inputText value="#{MBBicicleta.bicicletaSelecionada.modelo}" size="30" />
+			</p:panelGrid>
+			<p:panelGrid columns="2">
+				<p:commandButton value="Editar" 
+					action="#{MBBicicleta.editarBicicleta}"
+					update=":msgGlobal :formBicicletas:dataTable"
+					oncomplete="PF('dlgBikeEditar').hide();" />
+				<p:commandButton value="Cancelar"
+					oncomplete="PF('dlgBikeEditar').hide(); tabela.clearFilters();" />
+			</p:panelGrid>
+
+		</h:form>
+	</p:dialog>
+
+
+
+
+</h:body>
+</html>

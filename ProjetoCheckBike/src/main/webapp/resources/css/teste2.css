@@ -1,0 +1,55 @@
+@charset "ISO-8859-1";
+
+.body {
+	background-image: linear-gradient(45deg, yellow, #ff6601);
+	display:absolute;
+}
+
+* {
+	font-family: 'Verdana', sans-serif;
+}
+
+h1 {
+	color: black;
+	text-align: center;
+	font-size:50px;
+	margin-top:50px;
+}
+
+.botaoProximo {
+	width: 14%;
+	background-color: black;
+	color: white;
+	padding: 12px 12px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	margin-left:85%;
+}
+
+.card{
+	margin-top:50px;
+}
+
+.inputText {
+	width: 20%; 
+	padding : 12px 12px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-sizing: border-box;
+	height:40px;
+	
+}
+
+.fontLetra{
+	font-family: 'Verdana', sans-serif;
+}
+
+.insert{
+	margin-top:160px;
+	margin-left:20px;
+}

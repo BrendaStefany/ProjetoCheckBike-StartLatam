@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type"
+		content="text/xhtml; charset=ISO-8859-1" />
+	<title>CadOficina</title>
+	<h:outputStylesheet library="css" name="cadastroOficina.css" />
+</h:head>
+
+<h:body styleClass="body">
+
+	<h:form>
+		<div class="geral loginConteudo ">
+			<h1>Cadastro de Oficinas</h1>
+
+			<div class="CamposCadOficina">
+				<h:outputLabel value="Nome da Oficina" />
+				<p:inputText id="campoNomeOficina" styleClass="inputText"
+					value="#{MBOficina.oficina.nome}">
+
+				</p:inputText>
+			</div>
+			<div class="CamposCadOficina">
+				<h:outputLabel value="CNPJ" styleClass="fontLetra" />
+				<p:inputText id="campoCnpj" styleClass="inputText"
+					value="#{MBOficina.oficina.cnpj}" />
+			</div>
+			<div class="CamposCadOficina">
+				<h:outputLabel value="E-mail" styleClass="fontLetra" />
+				<p:inputText id="campoEmailOficina" styleClass="inputText"
+					value="#{MBOficina.oficina.email}" />
+			</div>
+
+
+			<div class="CamposCadOficina">
+				<h:outputLabel class="campoEstadoOficina" value="Estado" />
+				<p:inputText id="campoEstadoOficina" styleClass="inputText"
+					maxlength="2" value="#{MBOficina.oficina.estado}" />
+			</div>
+
+			<div class="CamposCadOficina">
+				<h:outputLabel class="campoBairroOficina" value="Bairro" />
+				<p:inputText id="campoBairroOficina" styleClass="inputText"
+					value="#{MBOficina.oficina.bairro}" />
+			</div>
+
+			<div class="CamposCadOficina">
+				<h:outputLabel class="campoCidadeOficina" value="Cidade" />
+				<p:inputText id="campoCidadeOficina" styleClass="inputText"
+					value="#{MBOficina.oficina.cidade}" />
+			</div>
+
+			<div class="CamposCadOficina">
+				<h:outputLabel class="campoRuaOficina" value="Rua" />
+				<p:inputText id="campoRuaOficina" styleClass="inputText"
+					value="#{MBOficina.oficina.rua}" />
+			</div>
+
+			<div class="CamposCadOficina">
+				<h:outputLabel class="campoNumeroOficina" value="Número" />
+				<p:inputText id="campoNumeroOficina" styleClass="inputText"
+					value="#{MBOficina.oficina.numero}" />
+			</div>
+
+			<div class="CamposCadOficina">
+				<h:outputLabel class="campoContato" value="Contato" />
+				<p:inputText id="campoContato" styleClass="inputText"
+					value="#{MBOficina.oficina.contato}" />
+			</div>
+
+			<div class="CamposCadOficina">
+				<h:outputLabel class="campoSenha" value="Senha" />
+				<p:inputText id="campoSenha" styleClass="inputText"
+					value="#{MBOficina.oficina.senha}" />
+			</div>
+
+
+			<div>
+				<h:messages id="mensagens" />
+				<h:commandButton value="Salvar" styleClass="botaoProximo"
+					action="#{MBOficina.novaOficina}" update="msgGlobal">
+					
+				</h:commandButton>
+				<h:commandButton value="Voltar" styleClass="botaoVoltar"
+					actionListener="#" />
+
+
+			</div>
+		</div>
+
+	</h:form>
+
+</h:body>
+
+</html>
+
