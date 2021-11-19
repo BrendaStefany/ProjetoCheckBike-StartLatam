@@ -1,0 +1,1 @@
+SELECT * FROM meubanco.cliente_bicicleta;	
