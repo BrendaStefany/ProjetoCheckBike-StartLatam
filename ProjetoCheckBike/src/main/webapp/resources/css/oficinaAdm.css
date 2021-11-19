@@ -102,3 +102,22 @@ h1 {
 	display: inline-block;
 	box-sizing: border-box;
 }
+
+.refresh {
+	width: 12%;
+	background-color: black;
+	color: white;
+	padding: 12px 12px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	margin-left:85%;
+	height:60px;
+	
+}
+
+.classRefresh{
+	margin-top:-10px;
+}

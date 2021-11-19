@@ -10,13 +10,14 @@ import javax.faces.model.ListDataModel;
 
 import br.com.CheckBike.dao.BicicletaDAO;
 import br.com.CheckBike.dao.OficinaDAO;
+import br.com.CheckBike.domain.BicicletaNova;
 import br.com.CheckBike.domain.Oficina;
 import br.com.CheckBike.util.JSFUtil;
 
 @ManagedBean(name = "MBOficina")
 @ViewScoped
 public class OficinaBean {
-	private ListDataModel<Oficina> itensOficina;
+	private ListDataModel<Oficina> oficinas;
 	
 	private Oficina oficinaSelecionada;
 
@@ -24,14 +25,16 @@ public class OficinaBean {
 	
 	private Oficina oficina = new Oficina();
 	
-	public ListDataModel<Oficina> getItensOficina() {
-		return itensOficina;
+	
+	public ListDataModel<Oficina> getOficinas() {
+		return oficinas;
 	}
 
 
-	public void setItensOficina(ListDataModel<Oficina> itensOficina) {
-		this.itensOficina = itensOficina;
+	public void setOficinas(ListDataModel<Oficina> oficinas) {
+		this.oficinas = oficinas;
 	}
+
 
 	public Oficina getOficinaSelecionada() {
 		return oficinaSelecionada;
@@ -58,7 +61,7 @@ public class OficinaBean {
 		try {
 			OficinaDAO dao = new OficinaDAO();
 			ArrayList<Oficina> lista = dao.listarOficina();
-			itensOficina = new ListDataModel<Oficina>(lista);
+			oficinas = new ListDataModel<Oficina>(lista);
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}
@@ -95,6 +98,16 @@ public class OficinaBean {
 
 	}
 	
-
+	public void editarOficina() {
+		try {
+			dao.editar(oficinaSelecionada);
+			ArrayList<Oficina> listaOficinas = dao.listarOficina();
+			oficinas = new ListDataModel<Oficina>(listaOficinas);
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	
 
 }

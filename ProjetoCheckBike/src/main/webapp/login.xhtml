@@ -16,18 +16,20 @@
 	<h:body styleClass="body">
 		<h:form id="formUsuario" styleClass="login">
 			<div class="geral loginConteudo ">
-				<h1 >Login</h1>
+				<h1 >Login Usuário</h1>
 				<div class="p-field">
 					<h:outputLabel value="CPF" styleClass="fontLetra" />
-					<h:inputText id="campoMatricula" styleClass="inputText"/>
+					<p:inputMask id="campoMatricula" styleClass="inputText" action="#{MBCliente.clienteLogin.cpf}"
+					mask="999.999.999-99"/>
 				</div>
 				<div class="p-field">
 					<h:outputLabel value="Senha"  />
-					<h:inputText id="campoSenha" styleClass="inputText" />
+					<p:password id="campoSenha" styleClass="inputText" action="#{MBCliente.clienteLogin.getSenha}"/>
 				</div>
-				<div class="esqueceuSenha"><h:outputLabel value="Esqueceu sua senha?" /></div>
-				<h:commandButton value="Entrar" styleClass="botaoEntrar"/>
-				<h:commandButton value="Voltar" styleClass="botaoVoltar"/>
+				<h:form>
+				<h:commandButton value="Entrar" styleClass="botaoEntrar" action="init.xhtml"/>
+				<h:commandButton value="Voltar" styleClass="botaoVoltar" action="ParaTeste" />
+				</h:form>
 			</div>
 
 

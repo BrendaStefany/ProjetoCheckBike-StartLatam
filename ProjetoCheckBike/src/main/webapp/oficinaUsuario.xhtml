@@ -19,7 +19,7 @@
 			
 
 			<p:dataTable emptyMessage="Nenhum registro encontrado."
-				value="#{MBOficina.itensOficina}" var="itemOficina"
+				value="#{MBOficina.oficinas}" var="itemOficina"
 				selectionMode="single" selection="#{MBOficina.oficinaSelecionada}"
 				rowKey="#{itemOficina.idOficina}" paginator="true" rows="5">
 
@@ -44,10 +44,18 @@
 			</p:dataTable>
 
 
+			<h:commandButton value="Refresh" styleClass="refresh"
+				action="oficinaUsuario">
+
+			</h:commandButton>
+		</div>
+	</h:form>
+<h:form>
+		<div class="classInicio">
+			<h:commandButton value="Início" styleClass="inicio" action="init" />
 
 
 		</div>
 	</h:form>
-
 </h:body>
 </html>

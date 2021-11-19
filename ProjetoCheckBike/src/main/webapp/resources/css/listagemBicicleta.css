@@ -30,6 +30,7 @@ h1 {
 }
 
 
+
 .botaoCadastrar {
 	width: 14%;
 	background-color: black;
@@ -68,4 +69,42 @@ h1 {
 .insert{
 	margin-top:40px;
 	margin-left:20px;
+}
+
+.refresh {
+	width: 6%;
+	background-color: black;
+	color: white;
+	padding: 12px 12px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	margin-left:85%;
+	height:60px;
+	
+}
+
+.classRefresh{
+	margin-top:-20px;
+}
+
+.inicio {
+	width: 6%;
+	background-color: black;
+	color: white;
+	padding: 12px 12px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	margin-left:2%;
+	height:60px;
+	
+}
+
+.classInicio{
+	margin-top:-800px;
 }

@@ -78,38 +78,51 @@ public class ClienteNovoDAO {
 		comando.executeUpdate();
 
 	}
-
-	public ClienteNovo buscarPorCodigo(ClienteNovo c) throws SQLException {
+	
+	
+	public ClienteNovo login(ClienteNovo c) throws SQLException {
+		 ClienteNovo usuario = null;
+		 StringBuilder sql = new StringBuilder();
+		 sql.append("SELECT * ");
+		 sql.append("FROM cliente ");
+		 sql.append("WHERE login=? AND senha=? ");
+//		 String sql = “SELECT * FROM Usuario WHERE login=? AND senha=?”;
+		 
+		 Connection conexao = ConexaoFactory.conectar();
+		 
+		 PreparedStatement ps = conexao.prepareStatement(sql.toString());
+		 ps.setString(1, usuario.getCpf());
+		 ps.setString(2, usuario.getSenha());
+		 ResultSet rs = ps.executeQuery();
+		 
+		return usuario;
+		
+		}
+	
+	 
+	public ClienteNovo loginValidar(ClienteNovo c) throws SQLException {
 		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT id_cliente, cpf, nome, cidade, email ");
+		sql.append("SELECT * ");
 		sql.append("FROM cliente ");
-		sql.append("WHERE id_cliente = ? ");
+		sql.append("WHERE cpf = ? AND senha = ? ");
 
 		Connection conexao = ConexaoFactory.conectar();
 
 		PreparedStatement comando = conexao.prepareStatement(sql.toString());
-		comando.setLong(1, c.getIdCliente());
 
 		// RESULTSET É UMA VARIAVEL QUE GUARDA RESULTADO DE CONSULTA
-		ResultSet resultado = comando.executeQuery(); // NO SELECT O COMANDO EXECUTAR É O QUERY, PQ ALÉM DE CONSULTAR É
-														// NECESSÁRIO QUE
-														// ELE RETORNE ALGO, DIFERENTE DOS OUTROS, QUE NÃO PRECISAVA
-														// RETORNAR NADA
+		ResultSet resultado = comando.executeQuery(); 
 
-		ClienteNovo retorno = null; // A VARIAVEL RETORNO DO TIPO CLIENTE. VAI SER O CLIENTE QUE SERÁ RETORNADO,
-		// COMEÇA COM NULL PQ SE N ACHAR NENHUM CLIENTE O RETORNO É O PROPRIO NULL, E SE
-		// ACHAR, IRÁ SER INSTANCIADO COM O NEW, E DPS USAR O SETTERS PRA PREENCHELO
+		ClienteNovo retorno = null;
+		
 
 		// PARA SABER SE RETORNA ALGO
 		if (resultado.next()) {
 			retorno = new ClienteNovo();
-			retorno.setIdCliente(resultado.getLong("id_cliente")); // PERGUNTA SE TEM PROXIMO, SE DEU CERTO QUER DIZER
+			// PERGUNTA SE TEM PROXIMO, SE DEU CERTO QUER DIZER
 																	// QUE TEM PROXIMO, SE NÃO
 			retorno.setCpf(resultado.getString("cpf")); // ,QUER DIZER QUE NÃO TEM NADA E CONTINUA VALENDO NULL
-			retorno.setNome(resultado.getString("nome"));
-			retorno.setCidade(resultado.getString("cidade"));
-			retorno.setEmail(resultado.getString("email"));
-
+			retorno.setSenha(resultado.getString("senha"));
 		}
 
 		return retorno;

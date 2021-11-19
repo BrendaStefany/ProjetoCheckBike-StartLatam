@@ -56,8 +56,7 @@ public class OficinaDAO {
 	public void editar(Oficina of) throws SQLException {
 		StringBuilder sql = new StringBuilder();
 		sql.append("UPDATE oficina ");
-		sql.append(
-				"SET nome = ?, estado = ?, estado = ?, cidade = ?, rua = ?, email = ?, numero = ?, bairro = ?, cnpj = ?, senha = ?, contato = ? ");
+		sql.append("SET nome = ?, email = ?, cidade = ?, contato = ? ");
 		sql.append("WHERE id_oficina = ? "); // USA O WHERE PQ SE N VAI ALTERAR TODOS OS NOMES, DESSE JEITO ALTERA DE
 												// ACORDO COM O ID
 
@@ -66,7 +65,10 @@ public class OficinaDAO {
 		PreparedStatement comando = conexao.prepareStatement(sql.toString());
 
 		comando.setString(1, of.getNome());
-		comando.setLong(2, of.getIdOficina());
+		comando.setString(2, of.getEmail());
+		comando.setString(3, of.getCidade());
+		comando.setString(4, of.getContato());
+		comando.setLong(5, of.getIdOficina());
 
 		comando.executeUpdate();
 
@@ -114,7 +116,7 @@ public class OficinaDAO {
 		StringBuilder sql = new StringBuilder();
 		sql.append("SELECT id_oficina, cnpj, nome, cidade, email, contato ");
 		sql.append("FROM oficina ");
-		sql.append("ORDER BY nome ASC ");
+		
 
 		Connection conexao = ConexaoFactory.conectar();
 

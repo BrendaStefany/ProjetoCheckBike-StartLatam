@@ -20,18 +20,20 @@
 	<h:form id="formBicicletas">
 
 		<div class="card">
-			
+
 			<h:commandButton value="Excluir Bicileta" styleClass="botaoExcluir"
 				action="#{MBBicicleta.deletarBicicletaSelecionada}">
 
 			</h:commandButton>
-		
+
+
 			<p:commandButton value="Editar Bicileta" styleClass="botaoEditar"
 				actionListener="#{MBBicicleta.prepararPesquisaBicicleta}"
 				oncomplete="PF('dlgBikeEditar').show()"
 				update=":msgGlobal :formBikeEditar:pnlBikeEditar">
 
-			<f:setPropertyActionListener value="#{itemBicicleta}" target="#{MBBicicleta.bicicletaNova}" />
+				<f:setPropertyActionListener value="#{itemBicicleta}"
+					target="#{MBBicicleta.bicicletaNova}" />
 			</p:commandButton>
 
 			<p:dataTable id="dataTable"
@@ -95,17 +97,19 @@
 		<h:form id="formBikeEditar">
 			<p:panelGrid id="pnlBikeEditar" columns="2">
 				<p:outputLabel value="Id:" />
-				<h:outputText value="#{MBBicicleta.bicicletaSelecionada.id_bicicleta}" />
+				<h:outputText
+					value="#{MBBicicleta.bicicletaSelecionada.id_bicicleta}" />
 
 				<p:outputLabel value="Descrição:" />
 				<h:inputText value="#{MBBicicleta.bicicletaSelecionada.descricao}"
 					size="30" />
 
 				<p:outputLabel value="Modelo:" />
-				<h:inputText value="#{MBBicicleta.bicicletaSelecionada.modelo}" size="30" />
+				<p:inputText value="#{MBBicicleta.bicicletaSelecionada.modelo}"
+					size="30" />
 			</p:panelGrid>
 			<p:panelGrid columns="2">
-				<p:commandButton value="Editar" 
+				<p:commandButton value="Editar"
 					action="#{MBBicicleta.editarBicicleta}"
 					update=":msgGlobal :formBicicletas:dataTable"
 					oncomplete="PF('dlgBikeEditar').hide();" />
@@ -116,8 +120,23 @@
 		</h:form>
 	</p:dialog>
 
+	<div>
+
+		<h:form>
+			<div class="classRefresh">
+				<h:commandButton value="Refresh" styleClass="refresh"
+					action="listagemBicicletas" />
+			</div>
+
+		</h:form>
+		<h:form>
+			<div class="classInicio">
+				<h:commandButton value="Início" styleClass="inicio" action="init" />
 
 
+			</div>
+		</h:form>
+	</div>
 
 </h:body>
 </html>

@@ -1,0 +1,95 @@
+@charset "ISO-8859-1";
+.body {
+	background-image: linear-gradient(45deg, yellow, #ff6601);
+	
+}
+
+.menu{
+	margin-top:8%;
+	margin-left:40px;
+}
+
+* {
+	font-family: 'Verdana', sans-serif;
+}
+
+h1 {
+	color: black;
+	text-align: center;
+	font-size:80px;
+	margin-top:40px;
+}
+
+.botaoOficinas{
+	width: 28%;
+	background-color: black;
+	color: white;
+	padding: 12px 12px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	height:80px;
+	
+}
+.BotaoOficinas{
+	margin-top:-7%;
+	margin-left:52%;;
+}
+
+.minhasBicicletas{
+	width: 22%;
+	background-color: black;
+	color: white;
+	padding: 12px 12px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	height:80px;
+	
+}
+.BotaoBicicletas{
+	margin-left:36%;
+	margin-top:10%;
+}
+
+.perfil{
+	width: 18%;
+	background-color: black;
+	color: white;
+	padding: 12px 12px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	height:80px;
+	
+}
+.BotaoPerfil{
+	margin-left:36%;
+	margin-top:5%;
+}
+.excluir{
+	width:23.5%;
+	background-color: black;
+	color: white;
+	padding: 12px 12px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	height:80px;
+}
+.BotaoExcluir {
+		margin-left:52.5%;
+		margin-top:-5.4%;
+}
+
+
+
+

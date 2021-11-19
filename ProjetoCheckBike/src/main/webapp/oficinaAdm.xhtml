@@ -11,21 +11,22 @@
 	<title>Oficina</title>
 </h:head>
 <h:body styleClass="body">
-<p:growl id="msgGlobal2" life="4000"></p:growl>
+	<p:growl id="msgGlobal2" life="4000"></p:growl>
 	<h1>Lista de Oficinas</h1>
 	<h:form id="formBicicletas">
 
 		<div class="card">
 			<h:commandButton value="Excluir Oficina" styleClass="botaoProximo"
-				action="#{MBOficina.deletarOficinaSlecionada}">
+				action="#{MBOficina.deletarOficinaSlecionada}" actionListener="oficinaAdm">
 
 			</h:commandButton>
 
+
+
 			<p:dataTable emptyMessage="Nenhum registro encontrado."
-				value="#{MBOficina.itensOficina}" var="itemOficina"
+				value="#{MBOficina.oficinas}" var="itemOficina"
 				selectionMode="single" selection="#{MBOficina.oficinaSelecionada}"
-				rowKey="#{itemOficina.idOficina}" paginator="true" rows="5"
-				>
+				rowKey="#{itemOficina.idOficina}" paginator="true" rows="5">
 
 				<p:column headerText="IdOficina">
 					<h:outputText value="#{itemOficina.idOficina}" />
@@ -48,10 +49,14 @@
 			</p:dataTable>
 
 
-
-
 		</div>
 	</h:form>
+	<h:form>
+		<div class="classRefresh">
+			<h:commandButton value="Refresh" styleClass="refresh"
+				action="oficinaAdm" />
+		</div>
 
+	</h:form>
 </h:body>
 </html>
