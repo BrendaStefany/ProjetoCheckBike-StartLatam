@@ -1,0 +1,112 @@
+body {
+    background-image: linear-gradient(45deg,yellow, #ff6601 );
+   
+}
+
+.textoh1 {
+
+    font-family: Verdana;
+    font-size: 36px;
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+
+}
+
+.textoh2 {
+    top: 37%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    position: absolute
+    
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+.img {
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-transform: uppercase;
+}
+
+.botaoConfig {
+    background-color: #000000;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-family: Verdana, sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, 450%);
+    cursor: pointer;
+    margin-left: 3.5vw;
+    text-decoration: none;
+    width: 150px;
+   
+    
+    
+}
+.botoes {
+   
+    background-color: #000000;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-family: Verdana, sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, 450%);
+    cursor: pointer;
+    margin-left: 3.5vw;
+    width: 150px;
+ 
+    
+}
+
+.botaoParceiros {
+    background-color:black;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: Verdana, sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(200%, -480%);
+    cursor: pointer;
+    margin-left: 3.5vw;
+    text-decoration: none;
+    width: 150px;
+    position: absolute;
+}
+
+.botaoConectar {
+    background-color:black;
+    border: none;
+    padding: 21px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: Verdana, sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(310%, -480%);
+    cursor: pointer;
+    margin-left: 3.5vw;
+    text-decoration: none;
+    width: 150px;
+    position: absolute;
+}

@@ -1,0 +1,171 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Status do Serviço
+    </title>
+    <link href="assets/fontAwesome/all.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: linear-gradient(45deg,yellow, #ff6601 );
+            height: 100vh;
+            min-height: 640px;
+            min-width: 320px;
+            font-family: Verdana, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            min-width: 300px;
+            height: 90%;
+            min-height: 600px;
+            background-color: #FAFAFA;
+            margin: auto;
+            padding-bottom: 30px;
+
+        }
+
+        .page-title {
+            color: #47525E;
+            margin-left: 60px;
+        }
+
+        .profile-image {
+            height: 140px;
+            width: 140px;
+            align-self: center;
+            margin-bottom: 40px;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .inline {
+            display: inline;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flow-col {
+            flex-flow: column;
+        }
+
+        .edit-image {
+            right: 0;
+            bottom: 0;
+            width: 32px;
+            height: 32px;
+            background-color: #FFFFFF;
+            opacity: 0.6;
+        }
+
+        .edit-font {
+            font-size: 28px;
+        }
+
+        .data-form {
+            max-width: 400px;
+            min-width: 260px;
+            padding: 20px
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        label {
+            text-align: center;
+        }
+
+        label,
+        .summary-item {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #47525E
+        }
+
+        .summary-total {
+            text-align: end;
+            color: #000000;
+
+        }
+
+        input {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+
+        }
+
+        button {
+            padding: 10px 5px 10px 5px;
+            color: #FFFFFF;
+            background-color: #47525E;
+            border: none;
+            margin: 0px 30px 0px 30px;
+        }
+
+        .product-image-container {
+            width: 33%;
+            min-width: 250px;
+        }
+
+        .product-sumary-container {
+            width: 66%;
+            padding-right: 60px;
+            min-width: 300px;
+
+        }
+
+        .product-image {
+            width: 250px;
+            height: 180px;
+            justify-self: center;
+        }
+
+        b {
+            color: #000000;
+        }
+        .green {
+            color: #82C91E;
+        }
+    </style>
+</head>
+
+<body class="flex justify-center">
+    <div class="container ">
+        <h1 class="page-title">Status do Serviço</h1>
+        <h3 class="page-title">Resumo do pedido #151549949459569141</h3>
+
+        <div class="flex">
+            <div class="product-image-container flex justify-center">
+                <image class="product-image" src="assets/resumoPedido/bicicleta.jpg" alt="Imagem do produto" />
+            </div>
+            <div class="product-sumary-container">
+                <p class="summary-item">1x Troca de correia <b>R$100,00</b></p>
+                <p class="summary-item">1x Troca de pneu aro 17 <b>R$100,00</b></p>
+                <p class="summary-item">2x Troca de freios <b>R$100,00</b></p>
+                <p class="summary-item">Subtotal <b>R$100,00</b></p>
+                <p class="summary-item">Frete <b>R$10,00</b></p>
+                <p class="summary-item">Desconto <b>R$30,00</b></p>
+                <p class="summary-item summary-total">Total R$380,00</p>
+            </div>
+        </div>
+        <div>
+            <h3 class="page-title">Pagamento: Boleto Bancário</h3>
+            <h4 class="page-title">Código de barras: 03399.63290 64000.000006 00125.201020 4 56140000017832</h4>
+            <h4 class="page-title"><i class="fas fa-receipt green"></i> Pago</h4>
+        </div>
+    </div>
+</body>
+
+</html>
